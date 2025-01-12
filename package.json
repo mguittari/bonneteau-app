@@ -1,0 +1,22 @@
+{
+	"name": "find-the-ace-of-spades",
+	"version": "1.0.0",
+	"description": "A little card game",
+	"main": "main.jsx",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "vite"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"vite": "^6.0.7",
+		"@vitejs/plugin-react": "^4.3.4"
+	}
+}

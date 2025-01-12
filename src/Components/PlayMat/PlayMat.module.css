@@ -1,0 +1,5 @@
+.play-mat {
+    background-color: var(--play-mat-color);
+    height: 100vh;
+    display: flex;
+  }
