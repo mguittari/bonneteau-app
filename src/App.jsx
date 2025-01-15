@@ -5,10 +5,13 @@ import PlayMat from "./Components/PlayMat/PlayMat";
 function App() {
 	const [figures, setFigures] = useState(["circle", "square", "triangle"]);
 
-	const shuffle = (array) => {
-		const shuffled = array.sort(() => Math.random() - 0.5);
-		setFigures(shuffled);
-	};
+	function shuffle(array) {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+		setFigures(array);
+	}
 
 	useEffect(() => {
 		shuffle(figures);
