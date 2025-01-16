@@ -4,4 +4,29 @@
     height: 15rem;
     border-radius: 1rem;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#triangle {
+ border-right : 50px solid transparent;
+ border-bottom : 87px solid green;
+ border-left : 50px solid transparent;
+}
+
+#circle {
+ border-right : 50px solid orange;
+ border-bottom : 50px solid orange;
+ border-left : 50px solid orange;
+ border-top: 50px solid orange;
+ border-radius: 50%;
+}
+
+#square {
+ border-right : 50px solid blue;
+ border-bottom : 50px solid blue;
+ border-left : 50px solid blue;
+ border-top: 50px solid blue;
 }
