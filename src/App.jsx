@@ -19,7 +19,8 @@ function App() {
 
 	useEffect(() => {
 		const shuffled = shuffle(figures);
-		// spread sur le tableau pour créer une nouvelle référence, afin de forcer React à re-rendre correctement les composants en fonction de l'état mis à jour
+		// spread sur le tableau pour créer une nouvelle référence, afin de forcer React à
+		//re-rendre correctement les composants en fonction de l'état mis à jour
 		setFigures([...shuffled]);
 	}, []);
 

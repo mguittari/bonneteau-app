@@ -1,8 +1,8 @@
 .card {
-    border: solid 2px black;
+    border: solid 10px white;
     width: 10rem;
     height: 15rem;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
 
 #triangle {
  border-right : 50px solid transparent;
- border-bottom : 87px solid green;
+ border-bottom : 93px solid green;
  border-left : 50px solid transparent;
 }
 
@@ -30,3 +30,21 @@
  border-left : 50px solid blue;
  border-top: 50px solid blue;
 }
+
+.returned-card {
+    background: 
+    repeating-linear-gradient(45deg, #ffffff -4px, #ffffff 0px, red 0px, red 7px);
+    
+  background-size: 20px 20px; /* Taille des carreaux */
+  background-color: #ffffff; /* Couleur de fond */
+}
+
+/*
+
+background: 
+    linear-gradient(90deg, #000 1px, transparent 1px),
+    linear-gradient(0deg, #000 1px, transparent 1px);  
+  background-size: 20px 20px; 
+  background-color: #fff; 
+}
+*/
