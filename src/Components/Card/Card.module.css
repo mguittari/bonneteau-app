@@ -31,7 +31,7 @@
  border-top: 50px solid blue;
 }
 
-.returned-card {
+.face-down-card {
     background: 
     repeating-linear-gradient(45deg, #ffffff -4px, #ffffff 0px, red 0px, red 7px);
     

@@ -3,10 +3,10 @@ import "./App.css";
 import PlayMat from "./Components/PlayMat/PlayMat";
 
 function App() {
-	const [figures, setFigures] = useState([
-		{ id: 1, shape: "circle" },
-		{ id: 2, shape: "square" },
-		{ id: 3, shape: "triangle" },
+	const [cards, setCards] = useState([
+		{ id: 1, shape: "circle", is_face_down: true },
+		{ id: 2, shape: "square", is_face_down: true },
+		{ id: 3, shape: "triangle", is_face_down: true },
 	]);
 
 	function shuffle(array) {
@@ -18,15 +18,16 @@ function App() {
 	}
 
 	useEffect(() => {
-		const shuffled = shuffle(figures);
+		const shuffled = shuffle(cards);
 		// spread sur le tableau pour créer une nouvelle référence, afin de forcer React à
-		//re-rendre correctement les composants en fonction de l'état mis à jour
-		setFigures([...shuffled]);
+		//re-rendre correctement les composants en fonction de l'état mis à jour (sinon il
+		// considère que le tableau n'a pas été modifié)
+		setCards([...shuffled]);
 	}, []);
 
 	return (
 		<>
-			<PlayMat figures={figures} />
+			<PlayMat cards={cards} setCards={setCards} />
 		</>
 	);
 }

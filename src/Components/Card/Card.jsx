@@ -1,27 +1,22 @@
-import { useState } from "react";
 import styles from "../Card/Card.module.css";
 
-export default function Card({ cardId, shape }) {
-	const [returnedCard, setReturnedCard] = useState(true);
-	const handleClickCard = () => {
-		setReturnedCard(!returnedCard);
-	};
-	return returnedCard ? (
+export default function Card({ card, handleClickCard }) {
+	return card.is_face_down ? (
 		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 		<div
-			onClick={handleClickCard}
-			key={cardId}
-			className={`${styles.card} ${styles["returned-card"]}`}
+			onClick={() => handleClickCard(card.id)}
+			key={card}
+			className={`${styles.card} ${styles["face-down-card"]}`}
 		/>
 	) : (
 		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 		<div
-			onClick={handleClickCard}
-			key={cardId}
-			id={`card-${shape}`}
+			onClick={() => handleClickCard(card.id)}
+			key={card}
+			id={`card-${card.shape}`}
 			className={`${styles.card}`}
 		>
-			<div id={styles[shape]} />
+			<div id={styles[card.shape]} />
 		</div>
 	);
 }

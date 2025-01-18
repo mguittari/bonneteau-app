@@ -1,12 +1,24 @@
 import Card from "../Card/Card";
 import styles from "../CardSet/CardSet.module.css";
 
-export default function CardSet({ figures }) {
+export default function CardSet({ cards, setCards }) {
+	const handleClickCard = (id) => {
+		const updatedCards = cards.map((card) => {
+			if (card.id === id) {
+				return {
+					...card,
+					is_face_down: !card.is_face_down,
+				};
+			}
+			return card;
+		});
+		setCards(updatedCards);
+	};
 	return (
 		<div className={styles["card-set"]}>
-			<Card cardId={figures[0].id} shape={figures[0].shape} />
-			<Card cardId={figures[1].id} shape={figures[1].shape} />
-			<Card cardId={figures[2].id} shape={figures[2].shape} />
+			<Card card={cards[0]} handleClickCard={handleClickCard} />
+			<Card card={cards[1]} handleClickCard={handleClickCard} />
+			<Card card={cards[2]} handleClickCard={handleClickCard} />
 		</div>
 	);
 }

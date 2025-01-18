@@ -18,10 +18,13 @@ Après chaque tour les cartes sont remélangées et retournées.
 - Design temporaire (formes géométriques à la place des figures, dos des cartes non fixé, etc)
 - Application fonctionnelle (logique algorithmique, affichage du score, tours limités)
 - Affichage du score en modal à la fin
+- Affiche de messages de félicitations à la fin de chaque tour et bouton pour accéder au tour d'après
 
 ## V1
 - Beau design ("vraies" cartes à jouer, tapis de jeu, etc)
 - Affichage des règles
+- Bouton recommencer la partie
+- Système de vies (- 1 vie si le joueur ne trouve pas la carte) et non plus la perte de points, la partie s'arrête quand toutes les vies sont perdues
 
 ## V2
 - Choix d'un pseudo en début de partie

@@ -2,4 +2,7 @@
     background-color: var(--play-mat-color);
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
   }
