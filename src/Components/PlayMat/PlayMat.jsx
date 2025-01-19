@@ -9,8 +9,10 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 	const [nextRound, setNextRound] = useState(false);
 	const [counter, setCounter] = useState(0);
 	const [round, setRound] = useState(1);
-	const [newGame, setNewGame] = useState(false);
 	const [isClicked, setIsClicked] = useState(false);
+	const [textButton, setTextButton] = useState("Next Round");
+	const [modal, setModal] = useState(false);
+	const [isDisabled, setIsDisabled] = useState(false);
 
 	const returnCard = (id) => {
 		const updatedCards = cards.map((card) => {
@@ -35,28 +37,32 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 			if (flippedCard && card.shape === "circle") {
 				setNextRound(true);
 				setCounter(counter - 1);
+				setIsDisabled(true);
 			} else if (flippedCard && card.shape === "square") {
 				setNextRound(true);
 				setCounter(counter + 2);
+				setIsDisabled(true);
 			}
 		});
 	};
 
 	const handleNextRound = () => {
-		if (round < 10) {
+		if (round < 9) {
 			// Incrémente le tour et continue la partie
 			setRound(round + 1);
-			setNewGame(false); // La partie continue
 		} else {
 			// Arrête la partie après 10 tours
-			setNewGame(true);
-			console.log("Fin de la partie !");
+			setRound(10);
+			setTextButton("End Game");
+		}
+		if (textButton === "End Game") {
+			setModal(true);
 		}
 	};
 
 	return (
 		<div className={styles["play-mat"]}>
-			<CardSet cards={cards} returnCard={returnCard} isClicked={isClicked} />
+			<CardSet cards={cards} returnCard={returnCard} isDisabled={isDisabled} />
 			<ScoreDisplay counter={counter} />
 			<RoundDisplay round={round} />
 			{nextRound && (
@@ -68,8 +74,11 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 					setRound={setRound}
 					handleNextRound={handleNextRound}
 					setNextRound={setNextRound}
+					textButton={textButton}
+					setIsDisabled={setIsDisabled}
 				/>
 			)}
+			{modal && <p>MODAL FIN DE PARTIE</p>}
 		</div>
 	);
 }

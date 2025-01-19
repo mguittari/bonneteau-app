@@ -4,10 +4,10 @@ export default function Button({
 	cards,
 	setCards,
 	shuffle,
-	round,
-	setRound,
 	handleNextRound,
 	setNextRound,
+	textButton,
+	setIsDisabled,
 }) {
 	const handleClick = () => {
 		// Remettre toutes les cartes face cachée
@@ -23,12 +23,12 @@ export default function Button({
 		setCards(shuffled);
 		setNextRound(false);
 		handleNextRound();
-		setIsClicked(true);
+		setIsDisabled(false);
 	};
 
 	return (
 		<button className={styles.button} type="button" onClick={handleClick}>
-			<p>Next round</p>
+			<p>{textButton}</p>
 		</button>
 	);
 }
