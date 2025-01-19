@@ -14,7 +14,7 @@ export default function Card({ card, returnCard }) {
 			onClick={() => returnCard(card.id)}
 			key={card}
 			id={`card-${card.shape}`}
-			className={`${styles.card}`}
+			className={`${styles.card} ${styles.disabled}`}
 		>
 			<div id={styles[card.shape]} />
 		</div>

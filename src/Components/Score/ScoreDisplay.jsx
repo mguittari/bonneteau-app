@@ -1,9 +1,9 @@
 import styles from "./ScoreDisplay.module.css";
 
-export default function ScoreDisplay() {
+export default function ScoreDisplay({ counter }) {
 	return (
 		<div className={styles.score}>
-			<p>Score : 0</p>
+			<p>Score : {counter}</p>
 		</div>
 	);
 }

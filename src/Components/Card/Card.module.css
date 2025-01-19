@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 #triangle {
  border-right : 50px solid transparent;
  border-bottom : 93px solid green;
