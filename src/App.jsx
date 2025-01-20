@@ -6,6 +6,7 @@ function App() {
 	const [cards, setCards] = useState([
 		{ id: 1, shape: "circle", is_face_down: true },
 		{ id: 2, shape: "square", is_face_down: true },
+		{ id: 3, shape: "triangle", is_face_down: true },
 	]);
 
 	function shuffle(array) {
@@ -13,6 +14,7 @@ function App() {
 			const j = Math.floor(Math.random() * (i + 1));
 			[array[i], array[j]] = [array[j], array[i]];
 		}
+
 		return array;
 	}
 

@@ -1,22 +1,18 @@
 import styles from "../Card/Card.module.css";
 
-export default function Card({ card, returnCard, isDisabled }) {
-	return card.is_face_down ? (
+export default function Card({ card, returnCard }) {
+	return (
 		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 		<div
-			onClick={() => returnCard(card.id)}
-			key={card}
-			className={`${styles.card} ${styles["face-down-card"]} ${isDisabled ? styles.disabled : ""}`}
-		/>
-	) : (
-		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
-		<div
-			onClick={() => returnCard(card.id)}
-			key={card}
-			id={`card-${card.shape}`}
-			className={`${styles.card} ${styles.disabled}`}
+			onClick={() => returnCard(card.id)} // Évite de cliquer sur une carte déjà retournée
+			className={`${styles.card} ${card.is_face_down ? styles.faceDown : styles.faceUp}`}
 		>
-			<div id={styles[card.shape]} />
+			<div className={styles.cardInner}>
+				<div className={styles.cardFront}>
+					<div id={styles[card.shape]} />
+				</div>
+				<div className={styles.cardBack} />
+			</div>
 		</div>
 	);
 }
