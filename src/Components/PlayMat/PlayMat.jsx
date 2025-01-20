@@ -9,7 +9,6 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 	const [nextRound, setNextRound] = useState(false);
 	const [counter, setCounter] = useState(0);
 	const [round, setRound] = useState(1);
-	const [isClicked, setIsClicked] = useState(false);
 	const [textButton, setTextButton] = useState("Next Round");
 	const [modal, setModal] = useState(false);
 	const [isDisabled, setIsDisabled] = useState(false);
@@ -26,7 +25,6 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 		});
 
 		setCards(updatedCards);
-		setIsClicked(true);
 
 		updatedCards.find((card) => {
 			const flippedCard = card.id === id;
@@ -48,10 +46,8 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 
 	const handleNextRound = () => {
 		if (round < 9) {
-			// Incrémente le tour et continue la partie
 			setRound(round + 1);
 		} else {
-			// Arrête la partie après 10 tours
 			setRound(10);
 			setTextButton("End Game");
 		}
@@ -76,6 +72,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 					setNextRound={setNextRound}
 					textButton={textButton}
 					setIsDisabled={setIsDisabled}
+					isDisabled={isDisabled}
 				/>
 			)}
 			{modal && <p>MODAL FIN DE PARTIE</p>}

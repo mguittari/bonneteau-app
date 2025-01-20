@@ -8,7 +8,18 @@ export default function Button({
 	setNextRound,
 	textButton,
 	setIsDisabled,
+	isDisabled,
 }) {
+	const endGameClick = () => {
+		if (textButton === "End Game") {
+			setCards([
+				{ id: 1, shape: "circle", is_face_down: false },
+				{ id: 2, shape: "square", is_face_down: false },
+			]);
+			setIsDisabled(true);
+		}
+	};
+
 	const handleClick = () => {
 		// Remettre toutes les cartes face cachée
 		const resetCards = cards.map((card) => ({
@@ -24,6 +35,7 @@ export default function Button({
 		setNextRound(false);
 		handleNextRound();
 		setIsDisabled(false);
+		endGameClick();
 	};
 
 	return (
