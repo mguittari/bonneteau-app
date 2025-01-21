@@ -4,7 +4,7 @@ export default function Card({ card, returnCard }) {
 	return (
 		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 		<div
-			onClick={() => returnCard(card.id)} // Évite de cliquer sur une carte déjà retournée
+			onClick={() => returnCard(card.id)}
 			className={`${styles.card} ${card.is_face_down ? styles.faceDown : styles.faceUp}`}
 		>
 			<div className={styles.cardInner}>

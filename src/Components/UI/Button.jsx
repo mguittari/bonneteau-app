@@ -17,7 +17,7 @@ export default function Button({ cards, setCards, content, shuffle }) {
 		<>
 			<button
 				type="button"
-				className={`${styles.button} ${styles.button_top}`}
+				className={`${styles.button}`}
 				onClick={handleClick}
 			>
 				<p className={styles.content}>{content}</p>

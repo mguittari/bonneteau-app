@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Chicle&family=Dangrek&family=Didact+Gothic&family=Monomaniac+One&display=swap');
-
 .play-mat {
     background-color: var(--play-mat-color);
     height: 100vh;
@@ -15,6 +13,14 @@
     font-size: 5.5rem;
     color: #c50101;
     text-shadow: 5px 5px #020202;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (width > 768px){
+    h1{
+      font-size: 7.5rem;
+      
+    }
   }
 
  
