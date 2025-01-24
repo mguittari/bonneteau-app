@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Chicle&family=Outfit:wght@100..900&display=swap');
+
 :root {
-  --play-mat-color: rgb(1, 149, 1);
+  --play-mat-color: #2b9f2b;
 }
 
 * {

@@ -1,6 +1,107 @@
 .card {
-    border: solid 2px black;
-    width: 10rem;
-    height: 15rem;
-    border-radius: 1rem;
+  width: 9rem;
+  height: 14rem;
+  border-radius: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+@media screen and (width < 390px) {
+  .card {
+    width: 7rem;
+  height: 10rem;
+  }
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 0.8s;
+}
+
+.card.faceDown .cardInner {
+  transform: rotateY(0deg);
+}
+
+.card.faceUp .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.cardBack {
+  background: 
+    repeating-linear-gradient(45deg, #ffffff -4px, #ffffff 0px, red 0px, red 7px);
+  background-size: 20px 20px; /* Taille des carreaux */
+  background-color: #ffffff; /* Couleur de fond */
+  border: solid 10px white;
+}
+
+.cardFront {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+#triangle {
+  border-right : 50px solid transparent;
+  border-bottom : 93px solid green;
+  border-left : 50px solid transparent;
+ }
+ 
+ #circle {
+  border-right : 50px solid orange;
+  border-bottom : 50px solid orange;
+  border-left : 50px solid orange;
+  border-top: 50px solid orange;
+  border-radius: 50%;
+ }
+ 
+ #square {
+  border-right : 50px solid blue;
+  border-bottom : 50px solid blue;
+  border-left : 50px solid blue;
+  border-top: 50px solid blue;
+ }
+
+ @media screen and (width < 390px) {
+  .card {
+    width: 7rem;
+  height: 10rem;
+  }
+  #triangle {
+    border-right : 40px solid transparent;
+  border-bottom : 75px solid green;
+  border-left : 40px solid transparent;
+   }
+   #circle {
+    border-right : 40px solid orange;
+    border-bottom : 40px solid orange;
+    border-left : 40px solid orange;
+    border-top: 40px solid orange;
+    border-radius: 50%;
+   }
+   #square {
+    border-right : 35px solid blue;
+    border-bottom : 35px solid blue;
+    border-left : 35px solid blue;
+    border-top: 35px solid blue;
+   }
 }
