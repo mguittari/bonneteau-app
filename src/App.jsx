@@ -6,7 +6,7 @@ function App() {
 	const [cards, setCards] = useState([
 		{ id: 1, shape: "circle", is_face_down: true },
 		{ id: 2, shape: "square", is_face_down: true },
-		{ id: 3, shape: "triangle", is_face_down: true },
+		{ id: 3, shape: "spade", is_face_down: true },
 	]);
 
 	function shuffle(array) {

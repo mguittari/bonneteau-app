@@ -60,10 +60,12 @@
   transform: rotateY(180deg);
 }
 
-#triangle {
-  border-right : 50px solid transparent;
-  border-bottom : 93px solid green;
-  border-left : 50px solid transparent;
+#spade {
+  background-image: url("/src/Components/Card/Spade.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
  }
  
  #circle {
@@ -86,10 +88,9 @@
     width: 7rem;
   height: 10rem;
   }
-  #triangle {
-    border-right : 40px solid transparent;
-  border-bottom : 75px solid green;
-  border-left : 40px solid transparent;
+  #spade {
+    width: 95%;
+  height: 95%;
    }
    #circle {
     border-right : 40px solid orange;
