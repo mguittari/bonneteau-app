@@ -60,44 +60,36 @@
   transform: rotateY(180deg);
 }
 
-#spade {
-  background-image: url("/src/Components/Card/Spade.png");
+#spade, #club {
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 100%;
  }
+
+ #spade {
+  background-image: url("/src/Components/Card/Spade.png");
+ }
  
- #circle {
-  border-right : 50px solid orange;
-  border-bottom : 50px solid orange;
-  border-left : 50px solid orange;
-  border-top: 50px solid orange;
-  border-radius: 50%;
+ #club {
+  background-image: url("/src/Components/Card/Club.png");
  }
  
  #square {
-  border-right : 50px solid blue;
-  border-bottom : 50px solid blue;
-  border-left : 50px solid blue;
-  border-top: 50px solid blue;
+  border-right : 50px solid rgb(208, 7, 7);
+  border-bottom : 50px solid rgb(208, 7, 7);
+  border-left : 50px solid rgb(208, 7, 7);
+  border-top: 50px solid rgb(208, 7, 7);
  }
 
  @media screen and (width < 390px) {
   .card {
-    width: 7rem;
+  width: 7rem;
   height: 10rem;
   }
-  #spade {
-    width: 95%;
+  #spade, #club {
+  width: 95%;
   height: 95%;
-   }
-   #circle {
-    border-right : 40px solid orange;
-    border-bottom : 40px solid orange;
-    border-left : 40px solid orange;
-    border-top: 40px solid orange;
-    border-radius: 50%;
    }
    #square {
     border-right : 35px solid blue;
