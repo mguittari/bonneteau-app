@@ -18,14 +18,16 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 
 	return (
 		<div className={styles["play-mat"]}>
-			<h1>Bonneteau</h1>
-			<CardSet cards={cards} returnCard={returnCard} />
-			<ShuffleButton
-				cards={cards}
-				setCards={setCards}
-				content="Mélange"
-				shuffle={shuffle}
-			/>
+			<div className={styles.border}>
+				<h1>Bonneteau</h1>
+				<CardSet cards={cards} returnCard={returnCard} />
+				<ShuffleButton
+					cards={cards}
+					setCards={setCards}
+					content="Mélange"
+					shuffle={shuffle}
+				/>
+			</div>
 		</div>
 	);
 }
