@@ -11,12 +11,23 @@
     font-family: "Chicle";
     font-size: 5.5rem;
     color: #c50101;
-    text-shadow: 5px 5px #020202;
-    padding-bottom: 2rem;
+    text-shadow: 6px 6px #020202;
+  }
+
+  .author {
+    font-family: "Outfit";
+    font-size: 17px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
   }
 
   .border{
-    border: solid 2px #302f2f;
+    border: solid 2px black;
     height: 95vh;
     width: 95vw;
     border-radius: 2rem;
