@@ -5,7 +5,7 @@ import PlayMat from "./Components/PlayMat/PlayMat";
 function App() {
 	const [cards, setCards] = useState([
 		{ id: 1, shape: "club", is_face_down: true },
-		{ id: 2, shape: "square", is_face_down: true },
+		{ id: 2, shape: "diamond", is_face_down: true },
 		{ id: 3, shape: "spade", is_face_down: true },
 	]);
 

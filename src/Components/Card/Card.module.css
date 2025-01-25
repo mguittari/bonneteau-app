@@ -60,7 +60,7 @@
   transform: rotateY(180deg);
 }
 
-#spade, #club {
+#spade, #club, #diamond {
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -68,18 +68,15 @@
  }
 
  #spade {
-  background-image: url("/src/Components/Card/Spade.png");
+  background-image: url("/src/Assets/Spade.png");
  }
  
  #club {
-  background-image: url("/src/Components/Card/Club.png");
+  background-image: url("/src/Assets/Club.png");
  }
  
- #square {
-  border-right : 50px solid rgb(208, 7, 7);
-  border-bottom : 50px solid rgb(208, 7, 7);
-  border-left : 50px solid rgb(208, 7, 7);
-  border-top: 50px solid rgb(208, 7, 7);
+ #diamond {
+  background-image: url("/src/Assets/Diamond.png");
  }
 
  @media screen and (width < 390px) {
@@ -87,14 +84,8 @@
   width: 7rem;
   height: 10rem;
   }
-  #spade, #club {
+  #spade, #club, #diamond {
   width: 95%;
   height: 95%;
-   }
-   #square {
-    border-right : 35px solid blue;
-    border-bottom : 35px solid blue;
-    border-left : 35px solid blue;
-    border-top: 35px solid blue;
    }
 }
