@@ -21,7 +21,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 			<div className={styles.border}>
 				<div className={styles.header}>
 					<h1>Bonneteau</h1>
-					<p className={styles.author}>Où est l'as de pique ?</p>
+					{/* <p className={styles.author}>Où est l'as de pique ?</p> */}
 				</div>
 
 				<CardSet cards={cards} returnCard={returnCard} />
