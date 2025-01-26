@@ -1,19 +1,12 @@
 .card {
-  width: 10rem; /* Plus compact */
+  width: 10rem;
   height: calc(10rem * 1.4); /* Ratio 1:1.4 */
-  border-radius: 0.5rem; /* Ajusté pour l'échelle */
+  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transform-style: preserve-3d;
-}
-
-@media screen and (width < 390px) {
-  .card {
-    width: 7rem;
-  height: 10rem;
-  }
 }
 
 .cardInner {
@@ -54,7 +47,7 @@
 }
 
 .design {
-  background-image: url("/src/Assets/Redback.jpg");
+  background-image: url("/src/Assets/BackCard.jpg");
   background-size: cover;
   background-color: #ffffff;
   width: 100%;
@@ -86,11 +79,13 @@
   background-image: url("/src/Assets/Diamond.png");
  }
 
- @media screen and (width < 390px) {
+
+ @media screen and (width < 768px) {
   .card {
   width: 7rem;
-  height: 10rem;
+  height: calc(7rem * 1.4);
   }
+
   #spade, #club, #diamond {
   width: 95%;
   height: 95%;

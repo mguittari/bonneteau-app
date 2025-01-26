@@ -10,13 +10,8 @@
   h1 {
     font-family: "Chicle";
     font-size: 5.5rem;
-    color: #c50101;
+    color: var(--main-color);
     text-shadow: 6px 6px #020202;
-  }
-
-  .author {
-    font-family: "Outfit";
-    font-size: 17px;
   }
 
   .header {

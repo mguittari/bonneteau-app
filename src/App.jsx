@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import PlayMat from "./Components/PlayMat/PlayMat";
 
 function App() {
@@ -18,6 +17,7 @@ function App() {
 		return array;
 	}
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: the hook works like this
 	useEffect(() => {
 		const shuffled = shuffle(cards);
 		// spread sur le tableau pour créer une nouvelle référence, afin de forcer React à

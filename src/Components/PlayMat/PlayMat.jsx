@@ -20,7 +20,6 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 		<div className={styles["play-mat"]}>
 			<div className={styles.border}>
 				<div className={styles.header}>
-					<p className={styles.author}>Mattias Guittari présente</p>
 					<h1>Bonneteau</h1>
 				</div>
 
