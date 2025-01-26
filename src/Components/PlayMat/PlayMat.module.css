@@ -14,11 +14,6 @@
     text-shadow: 6px 6px #020202;
   }
 
-  .author {
-    font-family: "Outfit";
-    font-size: 17px;
-  }
-
   .header {
     display: flex;
     flex-direction: column;
