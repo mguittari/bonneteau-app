@@ -10,7 +10,7 @@
   h1 {
     font-family: "Chicle";
     font-size: 5.5rem;
-    color: #e70e0e;
+    color: var(--main-color);
     text-shadow: 6px 6px #020202;
   }
 
