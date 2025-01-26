@@ -10,5 +10,6 @@ Prototype disponible en cliquant sur ce lien : https://mguittari.github.io/Bonne
 ## V1 (à venir prochainement)
 - Consigne "Trouve l'as de pique"
 - Message de félicitation quand on trouve
+- Choix du mode au lancement (mode "libre" (prototype) ou mode "jeu")
 
 
