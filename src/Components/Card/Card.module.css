@@ -1,7 +1,7 @@
 .card {
-  width: 9rem;
-  height: 14rem;
-  border-radius: 0.7rem;
+  width: 10rem; /* Plus compact */
+  height: calc(10rem * 1.4); /* Ratio 1:1.4 */
+  border-radius: 0.5rem; /* Ajusté pour l'échelle */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,11 +48,18 @@
 
 
 .cardBack {
-  background: 
-    repeating-linear-gradient(45deg, #ffffff -4px, #ffffff 0px, red 0px, red 7px);
-  background-size: 20px 20px; /* Taille des carreaux */
-  background-color: #ffffff; /* Couleur de fond */
+  
   border: solid 10px white;
+  background-color: #ffffff;
+}
+
+.design {
+  background-image: url("/src/Assets/Redback.jpg");
+  background-size: cover;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
 }
 
 .cardFront {
@@ -60,48 +67,32 @@
   transform: rotateY(180deg);
 }
 
-#triangle {
-  border-right : 50px solid transparent;
-  border-bottom : 93px solid green;
-  border-left : 50px solid transparent;
+#spade, #club, #diamond {
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  height: 100%;
+ }
+
+ #spade {
+  background-image: url("/src/Assets/Spade.png");
  }
  
- #circle {
-  border-right : 50px solid orange;
-  border-bottom : 50px solid orange;
-  border-left : 50px solid orange;
-  border-top: 50px solid orange;
-  border-radius: 50%;
+ #club {
+  background-image: url("/src/Assets/Club.png");
  }
  
- #square {
-  border-right : 50px solid blue;
-  border-bottom : 50px solid blue;
-  border-left : 50px solid blue;
-  border-top: 50px solid blue;
+ #diamond {
+  background-image: url("/src/Assets/Diamond.png");
  }
 
  @media screen and (width < 390px) {
   .card {
-    width: 7rem;
+  width: 7rem;
   height: 10rem;
   }
-  #triangle {
-    border-right : 40px solid transparent;
-  border-bottom : 75px solid green;
-  border-left : 40px solid transparent;
-   }
-   #circle {
-    border-right : 40px solid orange;
-    border-bottom : 40px solid orange;
-    border-left : 40px solid orange;
-    border-top: 40px solid orange;
-    border-radius: 50%;
-   }
-   #square {
-    border-right : 35px solid blue;
-    border-bottom : 35px solid blue;
-    border-left : 35px solid blue;
-    border-top: 35px solid blue;
+  #spade, #club, #diamond {
+  width: 95%;
+  height: 95%;
    }
 }

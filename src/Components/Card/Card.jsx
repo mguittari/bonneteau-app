@@ -11,7 +11,9 @@ export default function Card({ card, returnCard }) {
 				<div className={styles.cardFront}>
 					<div id={styles[card.shape]} />
 				</div>
-				<div className={styles.cardBack} />
+				<div className={styles.cardBack}>
+					<div className={styles.design} />
+				</div>
 			</div>
 		</div>
 	);
