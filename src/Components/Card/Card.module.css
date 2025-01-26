@@ -19,10 +19,12 @@
 
 .card.faceDown .cardInner {
   transform: rotateY(0deg);
+  
 }
 
 .card.faceUp .cardInner {
   transform: rotateY(180deg);
+  
 }
 
 .cardFront,
@@ -41,9 +43,9 @@
 
 
 .cardBack {
-  
   border: solid 10px white;
   background-color: #ffffff;
+  transform: rotateY(0deg);
 }
 
 .design {
@@ -91,3 +93,4 @@
   height: 97%;
    }
 }
+
