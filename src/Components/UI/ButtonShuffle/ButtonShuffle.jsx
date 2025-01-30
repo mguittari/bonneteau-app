@@ -1,4 +1,4 @@
-import styles from "./Button.module.css";
+import styles from "../ButtonShuffle/ButtonShuffle.module.css";
 
 export default function Button({ cards, setCards, content, shuffle }) {
 	const handleClickButton = () => {

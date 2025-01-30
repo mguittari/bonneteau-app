@@ -1,0 +1,12 @@
+.button-modal {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-family: "Outfit";
+    font-size: 1rem;
+    font-weight: 500;
+    border-style: outset;
+    background-color: white;
+    border-top: white;
+    border-left: white;
+    border-right: white;
+}
