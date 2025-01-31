@@ -4,9 +4,21 @@
     font-family: "Outfit";
     font-size: 1rem;
     font-weight: 500;
-    border-style: outset;
     background-color: white;
-    border-top: white;
-    border-left: white;
-    border-right: white;
+    border-style: outset;
+    position: relative;
+    top: 0.5px;
+    left: 0.5px;
+    right: 0.5px;
+    bottom: 0.5px;
+}
+
+.container-button {
+    margin: auto;
+}
+
+@media screen and (width > 768px){
+    .button-modal:active {
+        color: gray;
+    }
 }

@@ -3,10 +3,11 @@
     position: absolute;
     z-index: 1;
     width: 80vw;
-    height: 50vh;
+    max-width: 550px;
+    height: 45vh;
     background-color: rgb(203, 202, 202);
     border-radius: 1rem;
-    box-shadow: 2px 2px 6px black;
+    box-shadow: 0 2px 6px black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -16,15 +17,16 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     padding: 1rem 2rem;
     font-family: "Outfit";
 }
 
 .radios {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    
+    
+    
+    
 }
 
 .rules {

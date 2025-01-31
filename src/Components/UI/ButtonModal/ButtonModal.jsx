@@ -1,8 +1,8 @@
 import styles from "../ButtonModal/ButtonModal.module.css";
 
-export default function ButtonModal({ handleClickModal, isDisabled, mode }) {
+export default function ButtonModal() {
 	return (
-		<button type="button" onClick={handleClickModal} disabled={!mode}>
+		<button className={styles["container-button"]} type="submit">
 			<p className={styles["button-modal"]}>Valider</p>
 		</button>
 	);

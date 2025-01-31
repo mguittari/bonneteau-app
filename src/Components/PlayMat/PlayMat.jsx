@@ -42,12 +42,16 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 					/>
 				)}
 				<CardSet cards={cards} returnCard={returnCard} />
-				<ButtonShuffle
-					cards={cards}
-					setCards={setCards}
-					content="Mélange"
-					shuffle={shuffle}
-				/>
+				{mode === "freeMode" ? (
+					<ButtonShuffle
+						cards={cards}
+						setCards={setCards}
+						content="Mélange"
+						shuffle={shuffle}
+					/>
+				) : (
+					""
+				)}
 			</div>
 		</div>
 	);
