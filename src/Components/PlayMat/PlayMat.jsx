@@ -3,6 +3,7 @@ import styles from "./PlayMat.module.css";
 import ButtonShuffle from "../UI/ButtonShuffle/ButtonShuffle";
 import { useEffect, useState } from "react";
 import Modal from "../Modal/Modal";
+import ScreenInformations from "../ScreenInformations/ScreenInformations";
 
 export default function PlayMat({ cards, setCards, shuffle }) {
 	const [showModal, setShowModal] = useState(null);
@@ -10,6 +11,9 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 	const returnCard = (id) => {
 		const updatedCards = cards.map((card) => {
 			if (card.id === id) {
+				if (card.shape === "spade") {
+					console.log("Well done");
+				}
 				return {
 					...card,
 					is_face_down: !card.is_face_down,
@@ -29,9 +33,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 			<div className={styles.border}>
 				<div className={styles.header}>
 					<h1>Bonneteau</h1>
-					{/* {mode === "gameMode" && (
-						<p className={styles.author}>Où est l'as de pique ?</p>
-					)} */}
+					{mode === "gameMode" && <ScreenInformations />}
 				</div>
 				{showModal && (
 					<Modal

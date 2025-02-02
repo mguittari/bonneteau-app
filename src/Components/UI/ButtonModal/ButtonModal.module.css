@@ -5,20 +5,18 @@
     font-size: 1rem;
     font-weight: 500;
     background-color: white;
-    border-style: outset;
-    position: relative;
-    top: 0.5px;
-    left: 0.5px;
-    right: 0.5px;
-    bottom: 0.5px;
+    border: 1.5mm outset white;
+    
 }
 
 .container-button {
     margin: auto;
+    border: 2px solid gray;
 }
 
 @media screen and (width > 768px){
     .button-modal:active {
         color: gray;
+        background-color: rgb(232, 232, 232);
     }
 }

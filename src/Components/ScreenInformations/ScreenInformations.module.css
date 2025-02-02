@@ -1,0 +1,39 @@
+@keyframes defilement {
+    0% {
+      transform: translateX(100%);      /* position initiale à droite */
+    }
+     40% {
+        transform: translateX(0); /* Arrivée au centre */
+    }
+    60% {
+        transform: translateX(0); /* Pause au centre */
+    }
+    100% {
+      transform: translateX(-100%);  /* position finale à gauche */
+    }
+  }
+
+.screen {
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 14rem;
+height: 3.2rem;                
+border: 2mm ridge rgb(255 255 255 / 100%);
+background-color: black;
+overflow: hidden;                     
+font-family: "Jersey 15";
+}
+
+.text1 {
+    background-clip: text;
+-webkit-text-fill-color: transparent;
+background-image: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+    font-size: 1.5rem;
+    font-weight: 500;
+display: inline-block;                /* modèle de boîte en ligne */
+text-align: center;                                
+white-space: nowrap;                  /* pas de passage à la ligne */
+animation: defilement 12s infinite linear;
+}
+
