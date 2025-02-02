@@ -3,6 +3,7 @@
 :root {
   --play-mat-color: #2b9f2b;
   --main-color: #c50101;
+  --modal-color: rgb(203, 202, 202);
 }
 
 * {
