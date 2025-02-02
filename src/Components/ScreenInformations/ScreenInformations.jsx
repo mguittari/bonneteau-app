@@ -1,10 +1,10 @@
 import styles from "../ScreenInformations/ScreenInformations.module.css";
 
-export default function ScreenInformations() {
+export default function ScreenInformations({ ledScreen }) {
 	return (
 		<>
 			<div className={styles.screen}>
-				<div className={styles.text1}>Où est l'as de pique ?</div>
+				<p className={styles.text1}>{ledScreen}</p>
 			</div>
 		</>
 	);

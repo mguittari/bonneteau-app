@@ -34,6 +34,16 @@ background-image: -webkit-linear-gradient(left, red, orange, yellow, green, blue
 display: inline-block;                /* modèle de boîte en ligne */
 text-align: center;                                
 white-space: nowrap;                  /* pas de passage à la ligne */
-animation: defilement 12s infinite linear;
+animation: defilement 8s infinite linear;
+}
+
+.text2{
+background-clip: text;
+-webkit-text-fill-color: transparent;
+background-image: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+font-size: 1.5rem;
+font-weight: 500;
+display: inline-block;                
+text-align: center;   
 }
 

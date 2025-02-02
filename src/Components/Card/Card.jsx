@@ -1,10 +1,10 @@
 import styles from "../Card/Card.module.css";
 
-export default function Card({ card, returnCard }) {
+export default function Card({ card, returnCard, isDisabled }) {
 	return (
 		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 		<div
-			onClick={() => returnCard(card.id)}
+			onClick={isDisabled ? null : () => returnCard(card.id)}
 			className={`${styles.card} ${card.is_face_down ? styles.faceDown : styles.faceUp}`}
 		>
 			<div className={styles.cardInner}>

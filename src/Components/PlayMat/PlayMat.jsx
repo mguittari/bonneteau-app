@@ -8,11 +8,24 @@ import ScreenInformations from "../ScreenInformations/ScreenInformations";
 export default function PlayMat({ cards, setCards, shuffle }) {
 	const [showModal, setShowModal] = useState(null);
 	const [mode, setMode] = useState("");
+	const [ledScreen, setLedScreen] = useState("Où est l'as de pique ?");
+	const [isDisabled, setIsDisabled] = useState(false);
+	const [attempt, setAttempt] = useState(0);
+	console.log("tentative", attempt);
+
 	const returnCard = (id) => {
 		const updatedCards = cards.map((card) => {
 			if (card.id === id) {
 				if (card.shape === "spade") {
-					console.log("Well done");
+					setLedScreen("Bravo !!!");
+					setIsDisabled(true);
+					console.log("Bravo !!");
+				} else if (card.shape !== "spade" && attempt === 0) {
+					console.log("Essaie encore");
+					setAttempt(attempt + 1);
+				} else if (card.shape !== "spade" && attempt === 1) {
+					setIsDisabled(true);
+					console.log("perdu");
 				}
 				return {
 					...card,
@@ -33,7 +46,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 			<div className={styles.border}>
 				<div className={styles.header}>
 					<h1>Bonneteau</h1>
-					{mode === "gameMode" && <ScreenInformations />}
+					{mode === "gameMode" && <ScreenInformations ledScreen={ledScreen} />}
 				</div>
 				{showModal && (
 					<Modal
@@ -43,7 +56,11 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						setMode={setMode}
 					/>
 				)}
-				<CardSet cards={cards} returnCard={returnCard} />
+				<CardSet
+					cards={cards}
+					returnCard={returnCard}
+					isDisabled={isDisabled}
+				/>
 				{mode === "freeMode" ? (
 					<ButtonShuffle
 						cards={cards}
