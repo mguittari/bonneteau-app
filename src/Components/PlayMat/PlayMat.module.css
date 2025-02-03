@@ -7,11 +7,12 @@
     gap: 2.5rem;
   }
 
-  h1 {
+  .title {
     font-family: "Chicle";
     font-size: 5.5rem;
     color: var(--main-color);
     text-shadow: 6px 6px #020202;
+    cursor: pointer;
   }
 
   .author {
@@ -39,7 +40,7 @@
   }
 
   @media screen and (width > 768px){
-    h1{
+    .title{
       font-size: 7.5rem;
       
     }
