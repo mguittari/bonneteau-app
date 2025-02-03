@@ -2,7 +2,7 @@
     0% {
       transform: translateX(100%);      /* position initiale à droite */
     }
-     40% {
+    40% {
         transform: translateX(0); /* Arrivée au centre */
     }
     60% {
@@ -10,6 +10,15 @@
     }
     100% {
       transform: translateX(-100%);  /* position finale à gauche */
+    }
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
     }
   }
 
@@ -44,6 +53,7 @@ background-image: -webkit-linear-gradient(left, red, orange, yellow, green, blue
 font-size: 1.5rem;
 font-weight: 500;
 display: inline-block;                
-text-align: center;   
+text-align: center;
+animation: blink 0.8s 3;
 }
 

@@ -11,21 +11,38 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 	const [ledScreen, setLedScreen] = useState("Où est l'as de pique ?");
 	const [isDisabled, setIsDisabled] = useState(false);
 	const [attempt, setAttempt] = useState(0);
+	const [isSpade, setIsSpade] = useState(false);
 	console.log("tentative", attempt);
+
+	const handleTitleClick = () => {
+		window.location.reload(); // Rafraîchit la page
+	};
+
+	const returnLastCard = () => {
+		setCards((prevCards) =>
+			prevCards.map((card) =>
+				card.shape === "spade" ? { ...card, is_face_down: false } : card,
+			),
+		);
+	};
 
 	const returnCard = (id) => {
 		const updatedCards = cards.map((card) => {
 			if (card.id === id) {
-				if (card.shape === "spade") {
-					setLedScreen("Bravo !!!");
-					setIsDisabled(true);
-					console.log("Bravo !!");
-				} else if (card.shape !== "spade" && attempt === 0) {
-					console.log("Essaie encore");
-					setAttempt(attempt + 1);
-				} else if (card.shape !== "spade" && attempt === 1) {
-					setIsDisabled(true);
-					console.log("perdu");
+				if (mode === "gameMode") {
+					if (card.shape === "spade") {
+						setLedScreen("Bravo :) !!!");
+						setIsDisabled(true);
+						setIsSpade(true);
+						console.log("Bravo !!");
+					} else if (card.shape !== "spade" && attempt === 0) {
+						setLedScreen("Essaie encore ;)");
+						setAttempt(attempt + 1);
+					} else if (card.shape !== "spade" && attempt === 1) {
+						setIsDisabled(true);
+						setLedScreen("Perdu :(");
+						setTimeout(returnLastCard, 2000);
+					}
 				}
 				return {
 					...card,
@@ -45,8 +62,22 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 		<div className={styles["play-mat"]}>
 			<div className={styles.border}>
 				<div className={styles.header}>
-					<h1>Bonneteau</h1>
-					{mode === "gameMode" && <ScreenInformations ledScreen={ledScreen} />}
+					<h1
+						className={styles.title}
+						onClick={handleTitleClick}
+						onKeyDown={handleTitleClick}
+						title="Cliquez ici pour relancer le jeu"
+					>
+						Bonneteau
+					</h1>
+
+					{mode === "gameMode" && (
+						<ScreenInformations
+							ledScreen={ledScreen}
+							isSpade={isSpade}
+							attempt={attempt}
+						/>
+					)}
 				</div>
 				{showModal && (
 					<Modal

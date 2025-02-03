@@ -33,7 +33,9 @@ export default function Modal({ showModal, setShowModal, mode, setMode }) {
 							checked={data === "freeMode"}
 							onChange={handleChange}
 						/>
-						<label htmlFor="freeMode">Mode Libre</label>
+						<label className={styles.label} htmlFor="freeMode">
+							Mode Libre
+						</label>
 						<p className={styles.rules}>
 							Pas de règles en mode libre, vous pouvez manipuler les cartes et
 							les mélanger comme bon vous semble.
@@ -46,9 +48,12 @@ export default function Modal({ showModal, setShowModal, mode, setMode }) {
 							checked={data === "gameMode"}
 							onChange={handleChange}
 						/>
-						<label htmlFor="gameMode">Mode Jeu</label>
+						<label className={styles.label} htmlFor="gameMode">
+							Mode Jeu
+						</label>
 						<p className={styles.rules}>
-							Trouvez l'as de pique et amusez-vous comme un fou (peut-être pas).
+							Trouvez l'as de pique et amusez-vous comme un fou (peut-être pas à
+							vrai dire...).
 						</p>
 					</div>
 					<ButtonModal />
