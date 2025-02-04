@@ -4,6 +4,7 @@ export default function Card({ card, returnCard, isDisabled }) {
 	return (
 		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
 		<div
+			key={card.id}
 			onClick={isDisabled ? null : () => returnCard(card.id)}
 			className={`${styles.card} ${card.is_face_down ? styles.faceDown : styles.faceUp}`}
 		>

@@ -12,10 +12,9 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 	const [isDisabled, setIsDisabled] = useState(false);
 	const [attempt, setAttempt] = useState(0);
 	const [isSpade, setIsSpade] = useState(false);
-	console.log("tentative", attempt);
 
 	const handleTitleClick = () => {
-		window.location.reload(); // Rafraîchit la page
+		window.location.reload();
 	};
 
 	const returnLastCard = () => {
@@ -27,6 +26,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 	};
 
 	const returnCard = (id) => {
+		console.log("id card clicked", id);
 		const updatedCards = cards.map((card) => {
 			if (card.id === id) {
 				if (mode === "gameMode") {
@@ -34,7 +34,6 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						setLedScreen("Bravo :) !!!");
 						setIsDisabled(true);
 						setIsSpade(true);
-						console.log("Bravo !!");
 					} else if (card.shape !== "spade" && attempt === 0) {
 						setLedScreen("Essaie encore ;)");
 						setAttempt(attempt + 1);
