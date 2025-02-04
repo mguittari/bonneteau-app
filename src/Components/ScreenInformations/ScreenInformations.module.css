@@ -57,3 +57,8 @@ text-align: center;
 animation: blink 0.8s 3;
 }
 
+.click {
+  all: unset;
+  cursor: pointer;
+}
+

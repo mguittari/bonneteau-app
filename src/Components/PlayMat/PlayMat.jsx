@@ -12,6 +12,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 	const [isDisabled, setIsDisabled] = useState(false);
 	const [attempt, setAttempt] = useState(0);
 	const [isSpade, setIsSpade] = useState(false);
+	const [isClickable, setIsClickable] = useState(false);
 
 	const handleTitleClick = () => {
 		window.location.reload();
@@ -25,6 +26,14 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 		);
 	};
 
+	function resetGame() {
+		setAttempt(0);
+		setIsClickable(false);
+		setIsDisabled(false);
+		setIsSpade(false);
+		setLedScreen("Où est l'as de pique ?");
+	}
+
 	const returnCard = (id) => {
 		console.log("id card clicked", id);
 		const updatedCards = cards.map((card) => {
@@ -34,6 +43,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						setLedScreen("Bravo :) !!!");
 						setIsDisabled(true);
 						setIsSpade(true);
+						setIsClickable(true);
 					} else if (card.shape !== "spade" && attempt === 0) {
 						setLedScreen("Essaie encore ;)");
 						setAttempt(attempt + 1);
@@ -41,6 +51,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						setIsDisabled(true);
 						setLedScreen("Perdu :(");
 						setTimeout(returnLastCard, 2000);
+						setIsClickable(true);
 					}
 				}
 				return {
@@ -65,7 +76,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						className={styles.title}
 						onClick={handleTitleClick}
 						onKeyDown={handleTitleClick}
-						title="Cliquez ici pour relancer le jeu"
+						title="Cliquez ici pour retourner à l'accueil"
 					>
 						Bonneteau
 					</h1>
@@ -75,6 +86,10 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 							ledScreen={ledScreen}
 							isSpade={isSpade}
 							attempt={attempt}
+							isClickable={isClickable}
+							shuffle={shuffle}
+							setCards={setCards}
+							resetGame={resetGame}
 						/>
 					)}
 				</div>
