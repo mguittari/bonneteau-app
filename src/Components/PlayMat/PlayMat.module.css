@@ -39,6 +39,11 @@
     gap: 1.5rem;
   }
 
+  /* .display {
+    display: flex;
+    position: relative;
+  } */
+
   @media screen and (width > 768px){
     .title{
       font-size: 7.5rem;

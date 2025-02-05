@@ -12,9 +12,31 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 	const [isDisabled, setIsDisabled] = useState(false);
 	const [attempt, setAttempt] = useState(0);
 	const [isSpade, setIsSpade] = useState(false);
+	const [isClickable, setIsClickable] = useState(false);
 
 	const handleTitleClick = () => {
 		window.location.reload();
+	};
+
+	const handleClickShuffle = () => {
+		// Étape 1 : Retourner les cartes sans les mélanger
+		setCards((prevCards) =>
+			prevCards.map((card) => ({ ...card, is_face_down: true })),
+		);
+
+		// Étape 2 : Mélanger après 500ms tout en conservant les ID
+		setTimeout(() => {
+			setCards((prevCards) => {
+				// Copier proprement
+				const copiedCards = [...prevCards];
+
+				// Mélanger mais en conservant les IDs
+				const shuffled = shuffle(copiedCards);
+
+				return shuffled;
+			});
+		}, 600);
+		resetGame();
 	};
 
 	const returnLastCard = () => {
@@ -25,6 +47,14 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 		);
 	};
 
+	function resetGame() {
+		setAttempt(0);
+		setIsClickable(false);
+		setIsDisabled(false);
+		setIsSpade(false);
+		setLedScreen("Où est l'as de pique ?");
+	}
+
 	const returnCard = (id) => {
 		console.log("id card clicked", id);
 		const updatedCards = cards.map((card) => {
@@ -34,13 +64,17 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						setLedScreen("Bravo :) !!!");
 						setIsDisabled(true);
 						setIsSpade(true);
+						setTimeout(() => setIsClickable(true), 2000);
 					} else if (card.shape !== "spade" && attempt === 0) {
 						setLedScreen("Essaie encore ;)");
 						setAttempt(attempt + 1);
 					} else if (card.shape !== "spade" && attempt === 1) {
 						setIsDisabled(true);
 						setLedScreen("Perdu :(");
-						setTimeout(returnLastCard, 2000);
+						setTimeout(() => {
+							returnLastCard();
+							setIsClickable(true);
+						}, 2000);
 					}
 				}
 				return {
@@ -65,7 +99,7 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						className={styles.title}
 						onClick={handleTitleClick}
 						onKeyDown={handleTitleClick}
-						title="Cliquez ici pour relancer le jeu"
+						title="Cliquez ici pour retourner à l'accueil"
 					>
 						Bonneteau
 					</h1>
@@ -74,7 +108,8 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						<ScreenInformations
 							ledScreen={ledScreen}
 							isSpade={isSpade}
-							attempt={attempt}
+							isClickable={isClickable}
+							handleClickShuffle={handleClickShuffle}
 						/>
 					)}
 				</div>
@@ -93,10 +128,8 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 				/>
 				{mode === "freeMode" ? (
 					<ButtonShuffle
-						cards={cards}
-						setCards={setCards}
 						content="Mélange"
-						shuffle={shuffle}
+						handleClickShuffle={handleClickShuffle}
 					/>
 				) : (
 					""
