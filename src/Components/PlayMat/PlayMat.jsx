@@ -18,6 +18,27 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 		window.location.reload();
 	};
 
+	const handleClickShuffle = () => {
+		// Étape 1 : Retourner les cartes sans les mélanger
+		setCards((prevCards) =>
+			prevCards.map((card) => ({ ...card, is_face_down: true })),
+		);
+
+		// Étape 2 : Mélanger après 500ms tout en conservant les ID
+		setTimeout(() => {
+			setCards((prevCards) => {
+				// Copier proprement
+				const copiedCards = [...prevCards];
+
+				// Mélanger mais en conservant les IDs
+				const shuffled = shuffle(copiedCards);
+
+				return shuffled;
+			});
+		}, 600);
+		resetGame();
+	};
+
 	const returnLastCard = () => {
 		setCards((prevCards) =>
 			prevCards.map((card) =>
@@ -43,15 +64,17 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						setLedScreen("Bravo :) !!!");
 						setIsDisabled(true);
 						setIsSpade(true);
-						setIsClickable(true);
+						setTimeout(() => setIsClickable(true), 2000);
 					} else if (card.shape !== "spade" && attempt === 0) {
 						setLedScreen("Essaie encore ;)");
 						setAttempt(attempt + 1);
 					} else if (card.shape !== "spade" && attempt === 1) {
 						setIsDisabled(true);
 						setLedScreen("Perdu :(");
-						setTimeout(returnLastCard, 2000);
-						setIsClickable(true);
+						setTimeout(() => {
+							returnLastCard();
+							setIsClickable(true);
+						}, 2000);
 					}
 				}
 				return {
@@ -85,11 +108,8 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 						<ScreenInformations
 							ledScreen={ledScreen}
 							isSpade={isSpade}
-							attempt={attempt}
 							isClickable={isClickable}
-							shuffle={shuffle}
-							setCards={setCards}
-							resetGame={resetGame}
+							handleClickShuffle={handleClickShuffle}
 						/>
 					)}
 				</div>
@@ -108,10 +128,8 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 				/>
 				{mode === "freeMode" ? (
 					<ButtonShuffle
-						cards={cards}
-						setCards={setCards}
 						content="Mélange"
-						shuffle={shuffle}
+						handleClickShuffle={handleClickShuffle}
 					/>
 				) : (
 					""

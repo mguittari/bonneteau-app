@@ -22,6 +22,10 @@
     }
   }
 
+.infotext {
+  position: relative;
+}
+
 .screen {
 display: flex;
 flex-direction: column;
@@ -32,6 +36,7 @@ border: 2mm ridge rgb(255 255 255 / 100%);
 background-color: black;
 overflow: hidden;                     
 font-family: "Jersey 15";
+
 }
 
 .text1 {
@@ -54,11 +59,23 @@ font-size: 1.5rem;
 font-weight: 500;
 display: inline-block;                
 text-align: center;
-animation: blink 0.8s 3;
+animation: blink 0.8s 2;
 }
 
 .click {
   all: unset;
   cursor: pointer;
 }
+
+.reset-message {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  padding: 5px 10px;
+  white-space: nowrap; /* Empêche le texte de passer à la ligne */
+  font-family: "Outfit"
+}
+
 
