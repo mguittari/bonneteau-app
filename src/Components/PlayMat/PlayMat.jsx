@@ -56,7 +56,6 @@ export default function PlayMat({ cards, setCards, shuffle }) {
 	}
 
 	const returnCard = (id) => {
-		console.log("id card clicked", id);
 		const updatedCards = cards.map((card) => {
 			if (card.id === id) {
 				if (mode === "gameMode") {

@@ -2,7 +2,7 @@
 
 Simple jeu du bonneteau à 3 cartes.
 
-V1 disponible en cliquant sur ce lien : https://mguittari.github.io/Bonneteau-app/
+V1 disponible en cliquant sur ce lien : https://mguittari.github.io/bonneteau-app/
 
 ## Prototype
 - Pas de règles, juste 3 cartes à manipuler et mélanger
