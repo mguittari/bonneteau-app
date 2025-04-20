@@ -48,7 +48,7 @@ export default function Modal({ showModal, setShowModal, mode, setMode }) {
 							Mode Jeu
 						</label>
 						<p className={styles.rules}>
-							Trouvez l'as de pique et amusez-vous comme un fou !.
+							Trouvez l'as de pique et amusez-vous comme un fou !
 						</p>
 					</div>
 					<ButtonModal />
