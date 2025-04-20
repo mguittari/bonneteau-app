@@ -7,14 +7,10 @@ export default function Modal({ showModal, setShowModal, mode, setMode }) {
 
 	const handleChange = (e) => {
 		setData(e.target.value);
-		console.log(e.target);
-		console.log(e.target.value);
-		console.log(showModal);
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(data);
 		setMode(data);
 		setShowModal(!showModal);
 	};
@@ -52,8 +48,7 @@ export default function Modal({ showModal, setShowModal, mode, setMode }) {
 							Mode Jeu
 						</label>
 						<p className={styles.rules}>
-							Trouvez l'as de pique et amusez-vous comme un fou (peut-être pas à
-							vrai dire...).
+							Trouvez l'as de pique et amusez-vous comme un fou !.
 						</p>
 					</div>
 					<ButtonModal />
